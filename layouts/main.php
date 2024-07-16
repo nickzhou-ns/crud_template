@@ -25,7 +25,7 @@ function includeFileWithVariables($filePath, $variables = array(), $print = true
 
 $isScssconverted = false;
 
-require_once ("scssphp/scss.inc.php");
+require_once ("../scssphp/scss.inc.php");
 
 use ScssPhp\ScssPhp\Compiler;
 
@@ -34,13 +34,13 @@ if($isScssconverted){
     global $compiler;
     $compiler = new Compiler();
 
-    $compine_css = "assets/css/app.min.css";
+    $compine_css = "../assets/css/app.min.css";
 
-    $source_scss = "assets/scss/config/default/app.scss";
+    $source_scss = "../assets/scss/config/default/app.scss";
 
     $scssContents = file_get_contents($source_scss);
 
-    $import_path = "assets/scss/config/default";
+    $import_path = "../assets/scss/config/default";
     $compiler->addImportPath($import_path);
     $target_css = $compine_css;
 
